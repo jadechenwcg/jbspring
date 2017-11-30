@@ -8,13 +8,9 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<!-- member variables == bean id -->
 
-	<bean id="triangle" class="com.jade.javabrains.Triangle" autowire="byName" /> <!-- default autowire is false -->
-	<!-- <bean id="triangle" class="com.jade.javabrains.Triangle" autowire="byType" 	/>  just one memeber variable is one type-->
-	<!-- <bean id="triangle" class="com.jade.javabrains.Triangle" autowire="constructor" /> --> <!-- similar as byType, -->
-	
 
+	<bean id="triangle" class="com.jade.javabrains.Triangle" autowire="byName" scope="singleton"/>  <!-- for perticular spring container -->
 
 	<bean id="pA" class="com.jade.javabrains.Point">
 		<property name="x" value="0" />
