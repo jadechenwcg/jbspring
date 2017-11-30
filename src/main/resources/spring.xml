@@ -8,27 +8,25 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<bean id="triangle" class="com.jade.javabrains.Triangle">
-		<property name="points">
-			<list>
-				<ref bean="p0" />
-				<ref bean="p2" />
-				<ref bean="p3" />
-			</list>
-		</property>
-	</bean>
+	<!-- member variables == bean id -->
+
+	<bean id="triangle" class="com.jade.javabrains.Triangle" autowire="byName" /> <!-- default autowire is false -->
+	<!-- <bean id="triangle" class="com.jade.javabrains.Triangle" autowire="byType" 	/>  just one memeber variable is one type-->
+	<!-- <bean id="triangle" class="com.jade.javabrains.Triangle" autowire="constructor" /> --> <!-- similar as byType, -->
 	
-	<bean id="p0" class="com.jade.javabrains.Point">
+
+
+	<bean id="pA" class="com.jade.javabrains.Point">
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>
-	
-	<bean id="p2" class="com.jade.javabrains.Point">
+
+	<bean id="pB" class="com.jade.javabrains.Point">
 		<property name="x" value="-20" />
 		<property name="y" value="0" />
 	</bean>
-	
-	<bean id="p3" class="com.jade.javabrains.Point">
+
+	<bean id="pC" class="com.jade.javabrains.Point">
 		<property name="x" value="20" />
 		<property name="y" value="0" />
 	</bean>
