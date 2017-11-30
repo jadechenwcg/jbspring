@@ -1,31 +1,24 @@
 package com.jade.javabrains;
 
+import java.util.List;
+
 public class Triangle {
 	
-	private Point pA;
-	private Point pB;
-	private Point pC;
-	
-	public Point getpA() {
-		return pA;
+	private List<Point> points;
+		
+	public List<Point> getPoints() {
+		return points;
 	}
-	public void setpA(Point pA) {
-		this.pA = pA;
+
+
+	public void setPoints(List<Point> points) {
+		this.points = points;
 	}
-	public Point getpB() {
-		return pB;
-	}
-	public void setpB(Point pB) {
-		this.pB = pB;
-	}
-	public Point getpC() {
-		return pC;
-	}
-	public void setpC(Point pC) {
-		this.pC = pC;
-	}
-	
+
 	public void draw(){
-		System.out.println("Traingle drawn [" + getpA().getX() + "," +getpA().getY() + "]" + "[" + getpB().getX() + "," +getpB().getY() + "]" + "[" + getpC().getX() + "," +getpC().getY() + "]");
+		for (Point p: points) {
+			System.out.println("Traingle drawn [" + p.getX() + "," +p.getY() + "]" );
+		}
+		
 	}
 }
